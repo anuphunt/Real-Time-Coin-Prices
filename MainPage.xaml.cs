@@ -48,6 +48,7 @@ namespace WebScraper3._0
         }
         private void Container_Loaded(object sender, RoutedEventArgs e)
         {
+            
             TableData.ItemsSource = CurrencyPrices;
             TotalMarketCap.DataContext = MarketCapAndBTCDominance;
             BTCDominance.DataContext = MarketCapAndBTCDominance;
@@ -57,9 +58,18 @@ namespace WebScraper3._0
         private void Change24_Loaded(object sender, RoutedEventArgs e)
         {
             var change24 = (TextBlock)sender;
-            if (change24.Text[0] == '-')
+            ChangetoRed(change24);
+        }
+
+        private static void ChangetoRed(TextBlock change24)
+        {
+            if (change24.Text.Length > 0)
             {
-                change24.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+                if (change24.Text[0] == '-')
+                {
+                    change24.Foreground = new SolidColorBrush(Colors.Red);
+                }
+                else change24.Foreground = new SolidColorBrush(Colors.Black);
             }
         }
     }
