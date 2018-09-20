@@ -94,7 +94,7 @@
                         <TextBlock Text="Rank" Foreground="White"  FontSize="32" FontFamily="Yu Gothic UI SemiBold" FontWeight ="Bold" Grid.Column="0" Margin="2" HorizontalAlignment="Center"/>
                         <TextBlock Text="Name" Foreground="White"  FontSize="32" FontFamily="Yu Gothic UI SemiBold" FontWeight ="Bold" Grid.Column="1" Margin="2" HorizontalAlignment="Center"/>
                         <TextBlock Text="Price" Foreground="White"  FontSize="32" FontFamily="Yu Gothic UI SemiBold" FontWeight ="Bold" Grid.Column="2" Margin="2"  HorizontalAlignment="Center"/>
-                        <TextBlock Text="Change(24Hours)" Foreground="White"  FontSize="32" FontFamily="Yu Gothic UI SemiBold" FontWeight ="Bold" Grid.Column="3" Margin="2"  HorizontalAlignment="Center"/>
+                        <TextBlock Text="Change(24Hours)" Foreground="White"  FontSize="32" FontFamily="Yu Gothic UI SemiBold" FontWeight ="Bold" Grid.Column="3" Margin="2"  HorizontalAlignment="Center" />
                     </Grid>
                 </DataTemplate>
             </local:AlternatingRowListView.HeaderTemplate>
@@ -111,7 +111,7 @@
                         <TextBlock Text="{Binding CoinRank}" FontSize="24" Grid.Column="0" Margin="2" HorizontalAlignment="Center"/>
                         <TextBlock Text="{Binding CoinName}" FontSize="24" FontWeight="Bold" Grid.Column="1" Margin="2" HorizontalAlignment="Center"/>
                         <TextBlock Text="{Binding CoinPrice}" FontSize="24" Grid.Column="2" Margin="2"  HorizontalAlignment="Center"/>
-                        <TextBlock x:Name ="Change24" Text="{Binding Change24}" FontSize="24" Grid.Column="3" Margin="2"  HorizontalAlignment="Center" Loaded="Change24_Loaded"/>
+                        <TextBlock x:Name ="Change24" Text="{Binding Change24}" FontSize="24" Grid.Column="3" Margin="2"  HorizontalAlignment="Center"  DataContextChanged="TextBlock_DataContextChanged"/>
                     </Grid>
                 </DataTemplate>
             </local:AlternatingRowListView.ItemTemplate>
