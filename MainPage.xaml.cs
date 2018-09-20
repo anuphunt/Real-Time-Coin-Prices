@@ -55,12 +55,7 @@ namespace WebScraper3._0
             _timer = new System.Threading.Timer(DataStream, null, 0, 30 * 1000);
         }
 
-        private void Change24_Loaded(object sender, RoutedEventArgs e)
-        {
-            var change24 = (TextBlock)sender;
-            ChangetoRed(change24);
-        }
-
+  
         private static void ChangetoRed(TextBlock change24)
         {
             if (change24.Text.Length > 0)
@@ -71,6 +66,12 @@ namespace WebScraper3._0
                 }
                 else change24.Foreground = new SolidColorBrush(Colors.Black);
             }
+        }
+
+        private void TextBlock_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+            ChangetoRed((TextBlock)sender);
+
         }
     }
 }
